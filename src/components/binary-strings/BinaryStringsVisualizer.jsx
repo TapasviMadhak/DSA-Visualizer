@@ -480,7 +480,7 @@ export default function BinaryStringsVisualizer() {
           <JavaCodeViewer
             lines={JAVA_SNIPPETS[algo]}
             activeLine={currentStep.line}
-            title={algo === 'recursive' ? 'BinaryStringsRecursive.java' : 'BinaryStringsBacktrack.java'}
+            title={algo === 'recursive' ? 'Recursive source' : 'Backtracking source'}
           />
 
           <CallStack stack={currentStep.stack} maxDepth={n + 1} />

@@ -182,7 +182,7 @@ export default function TreeTheory() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.8rem' }}>
               <span style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
-                Full runnable Java program: <code>BinaryTreeFromArray.java</code>
+                Full reference implementation for the visualizer
               </span>
               <button
                 className="btn-tool"
