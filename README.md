@@ -1,6 +1,6 @@
-# 🚀 DSA Visualizer Hub
+# DSA Visualizer
 
-An interactive, high-performance Data Structures & Algorithms visualizer built with **React**, **Vite**, and **Java reference implementations**.
+An interactive learning workspace for stepping through data structures and algorithms. The active web app is intentionally small: React, Vite, and local CSS. Java files are reference implementations.
 
 ![DSA Visualizer Banner](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
@@ -8,7 +8,7 @@ An interactive, high-performance Data Structures & Algorithms visualizer built w
 
 ---
 
-## 🌟 Features
+## Features
 
 ### 1. 🔀 Binary Strings of Length N (Recursion & Backtracking)
 - **Interactive Tree & Stack Visualization**: Step through recursive decision trees with synchronized bit-slot arrays.
@@ -24,11 +24,11 @@ An interactive, high-performance Data Structures & Algorithms visualizer built w
 
 ---
 
-## 🛠️ Tech Stack
+## Tech stack
 
-- **Frontend**: React 18, Vite, Modern Vanilla CSS (Glassmorphism & Cyber/Dark theme)
-- **Backend / Reference**: Standalone Java algorithms (`BinaryTreeFromArray.java`, `BinaryStringsRecursive.java`)
-- **Visuals**: Canvas API, SVG vector graph layouts, CSS animations
+- **Frontend**: React and Vite
+- **Design**: Local CSS design system, no external UI framework or font runtime
+- **Reference**: Standalone Java algorithms
 
 ---
 
@@ -55,7 +55,19 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser to explore the visualizers!
+Vite opens the app at [http://localhost:3000](http://localhost:3000).
+
+### Windows PowerShell note
+
+If PowerShell reports that `npm.ps1` cannot run because scripts are disabled, the
+project is fine—this is a local execution-policy setting. Start the included
+launcher instead:
+
+```powershell
+.\start-dev.cmd
+```
+
+You can also use `npm.cmd run dev` in PowerShell, or `npm run dev` from Command Prompt.
 
 ### Running Java Code Directly
 
@@ -81,7 +93,7 @@ java BinaryTreeFromArray
 │   │   └── common/               # Navbar, controls, code viewer & call stack
 │   ├── App.jsx                   # Main visualizer switchboard
 │   ├── main.jsx                  # React DOM root
-│   └── index.css                 # Theme & glassmorphic design system
+│   └── index.css                 # Local design system and responsive layout
 ├── BinaryStringsRecursive.java   # Standalone Java recursive solution
 ├── BinaryTreeFromArray.java      # Standalone Java tree construction solution
 ├── index.html                    # Root HTML

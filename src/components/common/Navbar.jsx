@@ -1,59 +1,37 @@
 import React from 'react';
+import { Binary, CircleDollarSign, House, Landmark, Network, Search } from 'lucide-react';
 
-export default function Navbar({ activeTab, onTabChange, stats }) {
+export default function Navbar({ activeTab, onTabChange }) {
+  const tabs = [
+    { id: 'home', label: 'Library', icon: House },
+    { id: 'tree-array', label: 'Tree from array', icon: Network },
+    { id: 'binary-strings', label: 'Binary strings', icon: Binary },
+    { id: 'coin-change', label: 'Coin change', icon: CircleDollarSign },
+    { id: 'house-robber', label: 'House robber', icon: Landmark },
+    { id: 'first-unique', label: 'Last unique', icon: Search }
+  ];
+
   return (
     <header className="app-header">
       <div className="header-top">
         <div className="header-left">
-          <div className="logo-mark">
-            {activeTab === 'tree-array' ? '🌲' : '01'}
-          </div>
+          <div className="logo-mark">∿</div>
           <div>
             <div className="logo-title-row">
-              <h1 className="logo-title">
-                {activeTab === 'tree-array'
-                  ? 'Binary Tree from Array & Inorder Traversal'
-                  : 'Binary Strings Generator (Length N)'}
-              </h1>
-              <span className="badge badge-primary">Java DSA Visualizer</span>
-              <span className={`badge ${activeTab === 'tree-array' ? 'badge-emerald' : 'badge-accent'}`}>
-                {activeTab === 'tree-array' ? 'Recursion + Traversal' : 'Backtracking & Bitwise'}
-              </span>
+              <h1 className="logo-title">Algo<span>scope</span></h1>
+              <span className="header-context">Interactive study lab</span>
             </div>
-            <p className="logo-subtitle">
-              {activeTab === 'tree-array'
-                ? 'Recursive Array Mapping: 2*i+1 & 2*i+2 • Inorder Traversal • Call Stack Tracer'
-                : 'Interactive Binary Decision Tree • State Space Backtracking • Real-time Call Stack'}
-            </p>
+            <p className="logo-subtitle">Build intuition one state at a time.</p>
           </div>
         </div>
-
-        <div className="header-stats">
-          {stats && stats.map((st, i) => (
-            <div className="stat-pill" key={i}>
-              <span className="stat-label">{st.label}</span>
-              <span className={`stat-val ${st.highlightClass || ''}`} dangerouslySetInnerHTML={{ __html: st.value }} />
-            </div>
-          ))}
-        </div>
+        {activeTab !== 'home' && <span className="header-status"><i />Live simulation</span>}
       </div>
-
-      <nav className="nav-tab-bar">
-        <button
-          className={`nav-tab-btn ${activeTab === 'tree-array' ? 'active-tree' : ''}`}
-          onClick={() => onTabChange('tree-array')}
-        >
-          <span>🌲</span>
-          <span>1. Binary Tree from Array &amp; Inorder</span>
-        </button>
-
-        <button
-          className={`nav-tab-btn ${activeTab === 'binary-strings' ? 'active' : ''}`}
-          onClick={() => onTabChange('binary-strings')}
-        >
-          <span>✨</span>
-          <span>2. Binary Strings Generator (Length N)</span>
-        </button>
+      <nav className="nav-tab-bar" aria-label="Visualizers">
+        {tabs.map(({ id, label, icon: Icon }) => (
+          <button key={id} className={`nav-tab-btn ${activeTab === id ? 'active' : ''}`} onClick={() => onTabChange(id)} aria-current={activeTab === id ? 'page' : undefined}>
+            <Icon size={15} strokeWidth={2} /> <span>{label}</span>
+          </button>
+        ))}
       </nav>
     </header>
   );

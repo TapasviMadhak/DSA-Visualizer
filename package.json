@@ -1,8 +1,8 @@
 {
-  "name": "dsa-binary-strings-visualizer",
+  "name": "dsa-visualizer",
   "private": true,
   "version": "1.0.0",
-  "description": "DSA Visualizer in Java: Generating all binary strings of length N",
+  "description": "Interactive React workspace for learning data structures and algorithms.",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^5.4.14"
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.2.2"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.7.0",
     "lucide-react": "^1.37.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
